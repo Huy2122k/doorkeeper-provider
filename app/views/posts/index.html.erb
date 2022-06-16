@@ -1,0 +1,20 @@
+
+<div>
+
+<h1>Create post</h1>
+<div>
+new post
+<%= form_with(model: @newpost, local: true) do |f| %>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>
+</div>
+</div>
+
+<h1>Post</h1>
+
+<p>Here are a few of our fine post:</p>
+
+<%= render partial: "post", collection: @posts %>
