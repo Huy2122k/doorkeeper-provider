@@ -5,4 +5,7 @@ class ApplicationController < ActionController::Base
       redirect_to new_user_session_path
     end
   end
+  def doorkeeper_unauthorized_render_options(error: nil)
+    { json: { error: "Not authorized" } }
+  end
 end
