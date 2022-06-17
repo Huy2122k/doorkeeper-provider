@@ -21,7 +21,7 @@
         <% @application.redirect_uri.split.each do |uri| %>
           <tr>
             <td class="align-middle"><code><%= uri %></code></td>
-            <td class="align-middle" style="width: 70px"><%= link_to t('doorkeeper.applications.buttons.authorize'), oauth_authorization_path(client_id: @application.uid, redirect_uri: uri, response_type: 'code', scope: @application.scopes), class: 'btn btn-sm btn-success', target: '_blank' %></td>
+            <td class="align-middle" style="width: 70px"><%= link_to t('doorkeeper.applications.buttons.authorize'), oauth_authorization_path(client_id: @application.uid, redirect_uri: uri, response_type: 'token', scope: @application.scopes), class: 'btn btn-sm btn-success', target: '_blank' %></td>
           </tr>
         <% end %>
       </tbody>
